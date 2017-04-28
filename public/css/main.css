@@ -1,0 +1,17 @@
+body {
+  position: fixed;
+width: 70%;
+height: 100%;
+ top: 50%;
+ left: 50%;
+ /* bring your own prefixes */
+ transform: translate(-50%, -50%);
+ background-color: black;
+ margin-top: 10px;
+}
+
+header {
+  
+/*background-repeat: no-repeat;*/
+
+  }
