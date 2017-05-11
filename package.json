@@ -9,6 +9,9 @@
   "author": "Jahnava",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.1",
+    "connect-flash": "^0.1.1",
     "express": "^4.15.2"
   }
 }
