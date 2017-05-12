@@ -1,0 +1,37 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+
+body {
+  font-family: 'Lobster', cursive;
+}
+
+
+p {
+  margin: 0;
+}
+
+.section {
+  background-size: cover;
+  background-position: center;
+}
+
+.section-content {
+  text-align: center;
+  font-size: 3em;
+  color: #fff;
+}
+
+#section1 {
+  background-image:url('https://images.pexels.com/photos/6165/white-rings-decoration-macro.jpg?w=940&h=650&auto=compress&cs=tinysrgb');
+}
+
+#section2 {
+  background-image:url('https://scontent-dft4-2.xx.fbcdn.net/v/t1.0-9/15178066_10154273932464601_8841318248212962940_n.jpg?oh=bf6a9a3f1dc4a212aaa03685df5ad7c1&oe=597C522C');
+}
+
+#section3 {
+  background-image:url('https://scontent-dft4-2.xx.fbcdn.net/v/t1.0-9/16831103_10154527584864601_1451005340762687323_n.jpg?oh=ded3430e93e24da8c4b7f91b75ef22bd&oe=59C0D223');
+}
+
+#section4 {
+  background-image:url('https://scontent-dft4-2.xx.fbcdn.net/v/t1.0-9/16831103_10154527584864601_1451005340762687323_n.jpg?oh=ded3430e93e24da8c4b7f91b75ef22bd&oe=59C0D223');
+}
