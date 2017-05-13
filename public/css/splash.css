@@ -1,9 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+
 body {
-  background: #353535;
   overflow: hidden;
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  font-size: 3em;
+  color: #fff;
 }
 
-#envelope {
+a {
+  color:#000080;
+}
+
+#envelope  {
   background: #F66B40;
    width: 300px;
    height: 200px;
@@ -11,7 +20,7 @@ body {
    left: 50%;
    top: 50%;
    margin-left: -150px;
-   margin-top: -50px;
+   margin-top: -40px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
@@ -68,4 +77,398 @@ border-color: transparent transparent #F66B40 transparent;
   25% {top: -200px;}
   50% {top: -220px;}
   75% {top: -200px;}
+}
+
+/*floating hearts*/
+html { background-color: #50c6db; }
+
+
+/* heart-small */
+
+.heart-small {
+  -webkit-animation:heart-small 5s linear infinite;
+  animation:heart-small 5s linear infinite;
+  position: absolute;
+  left: 5%;
+}
+
+@keyframes heart-small {
+  0%   { top:60%; }
+  60%  { top:-15%; }
+  61%  { top:100%; opacity: 0; }
+  100% { top:60%; }
+}
+
+/* heart-small2 */
+
+.heart-small2 {
+  -webkit-animation:heart-small2 5s linear infinite;
+  animation:heart-small2 5s linear infinite;
+  position: absolute;
+  left: 8%;
+}
+
+@keyframes heart-small2 {
+  0%   { top:20%; }
+  20%  { top:-15%; opacity: 0; }
+  21%  { top:100%; opacity: 0; }
+  100% { top:20%; }
+}
+
+/* heart-small3 */
+
+.heart-small3 {
+  -webkit-animation:heart-small3 5s linear infinite;
+  animation:heart-small3 5s linear infinite;
+  position: absolute;
+  left: 25%;
+}
+
+@keyframes heart-small3
+{
+  0%   { top:105%; }
+  98%  { top:-15%; }
+  99%  { top:100%; opacity: 0; }
+  100% { top:105%; }
+}
+
+/* heart-small4 */
+
+.heart-small4 {
+  -webkit-animation:heart-small4 5s linear infinite;
+  animation:heart-small4 5s linear infinite;
+  position: absolute;
+  left: 28%;
+}
+
+@keyframes heart-small4
+{
+  0%   { top:40%; }
+  40%  { top:-15%; opacity: 0; }
+  41%  { top:100%; opacity: 0; }
+  100% { top:40%; }
+}
+
+/* heart-small5 */
+
+.heart-small5 {
+  -webkit-animation:heart-small5 5s linear infinite;
+  animation:heart-small5 5s linear infinite;
+  position: absolute;
+  left: 50%;
+}
+
+@keyframes heart-small5
+{
+  0%   { top:50%; }
+  50%  { top:-15%; opacity: 0; }
+  51%  { top:100%; opacity: 0; }
+  100% { top:50%; }
+}
+
+/* heart-small6 */
+
+.heart-small6 {
+  -webkit-animation:heart-small6 5s linear infinite;
+  animation:heart-small6 5s linear infinite;
+  position: absolute;
+  left: 70%;
+}
+
+@keyframes heart-small6
+{
+  0%   { top:25%; }
+  25%  { top:-15%; opacity: 0; }
+  26%  { top:100%; opacity: 0; }
+  100% { top:25%; }
+}
+
+/* heart-small7 */
+
+.heart-small7 {
+  -webkit-animation:heart-small7 5s linear infinite;
+  animation:heart-small7 5s linear infinite;
+  position: absolute;
+  left: 80%;
+}
+
+@keyframes heart-small7
+{
+  0%   { top:50%; }
+  50%  { top:-15%; opacity: 0; }
+  51%  { top:100%; opacity: 0; }
+  100% { top:50%; }
+}
+
+/* heart-small8 */
+
+.heart-small8 {
+  -webkit-animation:heart-small8 5s linear infinite;
+  animation:heart-small8 5s linear infinite;
+  position: absolute;
+  left: 95%;
+}
+
+@keyframes heart-small8
+{
+  0%   { top:105%; }
+  98%  { top:-15%; opacity: 0; }
+  99%  { top:100%; opacity: 0; }
+  100% { top:105%; }
+}
+
+
+.heart-medium {
+  -webkit-animation:heart-medium 4s linear infinite;
+  animation:heart-medium 4s linear infinite;
+  position: absolute;
+  left: 5%;
+}
+
+@keyframes heart-medium
+{
+  0%   { top:105%; }
+  98%  { top:-15%; }
+  99%  { top:100%; opacity: 0; }
+  100% { top:105%; }
+}
+
+/* heart-medium2 */
+
+.heart-medium2 {
+  -webkit-animation:heart-medium2 4s linear infinite;
+  animation:heart-medium2 4s linear infinite;
+  position: absolute;
+  left: 20%;
+}
+
+@keyframes heart-medium2
+{
+  0%   { top:20%; }
+  20%  { top:-15%; opacity: 0; }
+  21%  { top:100%; opacity: 0; }
+  100% { top:20%; }
+}
+
+/* heart-medium3 */
+
+.heart-medium3 {
+  -webkit-animation:heart-medium3 4s linear infinite;
+  animation:heart-medium3 4s linear infinite;
+  position: absolute;
+  left: 23%;
+}
+
+@keyframes heart-medium3
+{
+  0%   { top:60%; }
+  40%  { top:-15%; opacity: 0; }
+  41%  { top:100%; opacity: 0; }
+  100% { top:60%; }
+}
+
+/* heart-medium4 */
+
+.heart-medium4 {
+  -webkit-animation:heart-medium4 4s linear infinite;
+  animation:heart-medium4 4s linear infinite;
+  position: absolute;
+  left: 35%;
+}
+
+@keyframes heart-medium4
+{
+  0%   { top:40%; }
+  40%  { top:-15%; opacity: 0; }
+  41%  { top:100%; opacity: 0; }
+  100% { top:40%; }
+}
+
+/* heart-medium5 */
+
+.heart-medium5 {
+  -webkit-animation:heart-medium5 4s linear infinite;
+  animation:heart-medium5 4s linear infinite;
+  position: absolute;
+  left: 75%;
+}
+
+@keyframes heart-medium5
+{
+  0%   { top:40%; }
+  40%  { top:-15%; opacity: 0; }
+  41%  { top:100%; opacity: 0; }
+  100% { top:40%; }
+}
+
+/* heart-medium6 */
+
+.heart-medium6 {
+  -webkit-animation:heart-medium6 4s linear infinite;
+  animation:heart-medium6 4s linear infinite;
+  position: absolute;
+  left: 80%;
+}
+
+@keyframes heart-medium6
+{
+  0%   { top:60%; }
+  40%  { top:-15%; opacity: 0; }
+  41%  { top:100%; opacity: 0; }
+  100% { top:60%; }
+}
+
+/* heart-medium7 */
+
+.heart-medium7 {
+  -webkit-animation:heart-medium7 4s linear infinite;
+  animation:heart-medium7 4s linear infinite;
+  position: absolute;
+  left: 90%;
+}
+
+@keyframes heart-medium7
+{
+  0%   { top:20%; }
+  10%  { top:-15%; opacity: 0; }
+  11%  { top:100%; opacity: 0; }
+  100% { top:20%; }
+}
+
+
+/* heart-large */
+
+.heart-large {
+  -webkit-animation:heart-large 6s linear infinite;
+  animation:heart-large 6s linear infinite;
+  position: absolute;
+  left: 2%;
+}
+
+@keyframes heart-large
+{
+  0%   { top:40%; }
+  40%  { top:-15%; opacity: 0; }
+  41%  { top:100%; opacity: 0; }
+  100% { top:40%; }
+}
+
+/* heart-large2 */
+
+.heart-large2 {
+  -webkit-animation:heart-large2 6s linear infinite;
+  animation:heart-large2 6s linear infinite;
+  position: absolute;
+  left: 50%;
+}
+
+@keyframes heart-large2
+{
+  0%   { top:20%; }
+  10%  { top:-15%; opacity: 0; }
+  11%  { top:100%; opacity: 0; }
+  100% { top:20%; }
+}
+
+/* heart-large3 */
+
+.heart-large3 {
+  -webkit-animation:heart-large3 6s linear infinite;
+  animation:heart-large3 6s linear infinite;
+  position: absolute;
+  left: 55%;
+}
+
+@keyframes heart-large3
+{
+  0%   { top:60%; }
+  40%  { top:-15%; opacity: 0; }
+  41%  { top:100%; opacity: 0; }
+  100% { top:60%; }
+}
+
+/* heart-large4 */
+
+.heart-large4 {
+  -webkit-animation:heart-large4 6s linear infinite;
+  animation:heart-large4 6s linear infinite;
+  position: absolute;
+  left: 85%;
+}
+
+@keyframes heart-large4
+{
+  0%   { top:60%; }
+  40%  { top:-15%; opacity: 0; }
+  41%  { top:100%; opacity: 0; }
+  100% { top:60%; }
+}
+
+
+/* heart-outline */
+
+.heart-outline {
+  -webkit-animation:heart-outline 7s linear infinite;
+  animation:heart-outline 7s linear infinite;
+  position: absolute;
+  left: 5%;
+}
+
+@keyframes heart-outline
+{
+  0%   { top:50%; }
+  40%  { top:-15%; opacity: 0; }
+  41%  { top:100%; opacity: 0; }
+  100% { top:50%; }
+}
+
+/* heart-outline2 */
+
+.heart-outline2 {
+  -webkit-animation:heart-outline2 7s linear infinite;
+  animation:heart-outline2 7s linear infinite;
+  position: absolute;
+  left: 15%;
+}
+
+@keyframes heart-outline2
+{
+  0%   { top:105%; }
+  90%  { top:-15%; opacity: 0; }
+  91%  { top:100%; opacity: 0; }
+  100% { top:105%; }
+}
+
+/* heart-outline3 */
+
+.heart-outline3 {
+  -webkit-animation:heart-outline3 7s linear infinite;
+  animation:heart-outline3 7s linear infinite;
+  position: absolute;
+  left: 25%;
+}
+
+@keyframes heart-outline3
+{
+  0%   { top:40%; }
+  40%  { top:-15%; opacity: 0; }
+  41%  { top:100%; opacity: 0; }
+  100% { top:40%; }
+}
+
+/* heart-outline4 */
+
+.heart-outline4 {
+  -webkit-animation:heart-outline4 7s linear infinite;
+  animation:heart-outline4 7s linear infinite;
+  position: absolute;
+  left: 90%;
+}
+
+@keyframes heart-outline4
+{
+  0%   { top:20%; }
+  10%  { top:-15%; opacity: 0; }
+  11%  { top:100%; opacity: 0; }
+  100% { top:20%; }
 }
