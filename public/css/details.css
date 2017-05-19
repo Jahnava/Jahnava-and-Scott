@@ -328,10 +328,15 @@ width: 400px;
 height: 300px;
 padding-left: 5px;
 padding-right: 5px;
-border-color: #6699CC;
+border-color: #fff;
 border-width: 1px;
 border-style: solid;
 float: left;
 overflow: auto;
 text-align: center;
+}
+
+iframe {
+  width:400px;
+  height: 300px;
 }
