@@ -1,8 +1,28 @@
-/*
-@author Alberto Hartzet
-*
-*I wouldn't mind if you use this piece of code in your project as long
-as you give credit with a link to my site. www.albertohartzet.com
-*
-Licence (CC BY-NC-SA 4.0) http://creativecommons.org/licenses/by-nc-sa/4.0/
-*/
+$(document).ready(function(){
+    $(".begin").on("click",function(){
+        $(".sec-A").addClass("showing");
+        $(".head").hide();
+    });
+    $(".down").on("click",function(){
+        $(".head").addClass("head-hide");
+    });
+    $(".home").on("click",function(){
+        $(".side").removeClass("showing");
+    });
+    $(".code-btn").on("click",function(){
+        $(".sec-B").addClass("showing");
+    });
+    $(".back-btn").on("click",function(){
+        $(".sec-B").removeClass("showing");
+    });
+});
+
+// p1 button
+var $button = document.querySelector('.button');
+$button.addEventListener('click', function() {
+  var duration = 0.3,
+      delay = 0.08;
+  TweenMax.to($button, duration, {scaleY: 1.6, ease: Expo.easeOut});
+  TweenMax.to($button, duration, {scaleX: 1.2, scaleY: 1, ease: Back.easeOut, easeParams: [3], delay: delay});
+  TweenMax.to($button, duration * 1.25, {scaleX: 1, scaleY: 1, ease: Back.easeOut, easeParams: [6], delay: delay * 3 });
+});
