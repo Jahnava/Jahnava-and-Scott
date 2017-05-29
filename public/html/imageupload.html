@@ -1,24 +1,3 @@
-<!--
-Database Rules
-
-{
-  "rules": {
-    ".read": true,
-    ".write": true
-  }
-}
-
-Storage Rules
-
-service firebase.storage {
-  match /b/firepicture2.appspot.com/o {
-    match /{allPaths=**} {
-      allow read, write;
-    }
-  }
-}
-
--->
 <!DOCTYPE html>
 <html>
   <head>
@@ -45,7 +24,10 @@ service firebase.storage {
 <div ng-app="myApp">
   <div ng-controller="imagesController as vm">
 
-    <h1 class="text-info" align="center">Upload Images to Firebase 3</h1>
+    <h1 class="text-info" align="center">The Wedding of Scott and Jahnava</h1>
+    <h3 class="text-info" align="center">Photo Upload Page</h3>
+    <br>
+    <h4 class="text-info" align="center">Please upload and share pictures from our special day!</h4>
 
     <br />
 

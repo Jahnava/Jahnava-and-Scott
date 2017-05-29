@@ -14,7 +14,7 @@
     firebase.initializeApp(config);
     })
     .controller('imagesController', imagesController)
-    .directive('customOnChange', customOnChange);
+    .directive('customOnChange', customOnChange)
 
   function imagesController ($firebaseArray) {
 
@@ -46,7 +46,7 @@
           name: uploadTask.h.name,
           path: uploadTask.h.fullPath,
           date: uploadTask.h.timeCreated
-        };
+        }
 
         list.$add(imageData).then(function(ref) {
           swal("Success", "Your image has been upload", "success")
