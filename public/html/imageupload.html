@@ -1,55 +1,70 @@
+<!--
+Database Rules
+
+{
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+
+Storage Rules
+
+service firebase.storage {
+  match /b/firepicture2.appspot.com/o {
+    match /{allPaths=**} {
+      allow read, write;
+    }
+  }
+}
+
+-->
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/uploadimage.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" charset="utf-8"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" charset="utf-8"></script>
-    <script src="https://fonts.googleapis.com/icon?family=Material+Icons" charset="utf-8"></script>
-    <script src="https://fezvrasta.github.io/bootstrap-material-design/dist/css/bootstrap-material-design.css" charset="utf-8"></script>
-    <script src="https://fezvrasta.github.io/bootstrap-material-design/dist/css/ripples.min.css" charset="utf-8"></script>
-  <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js" class=""></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" class=""></script>
-  <script src="https://fezvrasta.github.io/bootstrap-material-design/dist/js/material.min.js" class=""></script>
-  <script src="https://fezvrasta.github.io/bootstrap-material-design/dist/js/ripples.min.js" class=""></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js" class=""></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.js" class=""></script>
-  <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js" class=""></script>
-  <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js" class=""></script>
+    <link rel="stylesheet" href="/css/imageupload.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <link rel="stylesheet" href="https://fezvrasta.github.io/bootstrap-material-design/dist/css/bootstrap-material-design.css">
+    <link rel="stylesheet" href="https://fezvrasta.github.io/bootstrap-material-design/dist/css/ripples.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js" charset="utf-8"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" charset="utf-8"></script>
+    <script src="https://fezvrasta.github.io/bootstrap-material-design/dist/js/material.min.js" charset="utf-8"></script>
+    <script src="https://fezvrasta.github.io/bootstrap-material-design/dist/js/ripples.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js" charset="utf-8"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js" charset="utf-8"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js" charset="utf-8"></script>
 
-    </script>
-    <title></title>
+    <title>Upload Images</title>
   </head>
   <body>
-    <!--
-  Firebase v2.2.4
 
-  Las imágenes toma tiempo en cargar, sea paciente
-  The images take time to load, be patient
+<div ng-app="myApp">
+  <div ng-controller="imagesController as vm">
 
-  -->
-  <div ng-app='img2fire'>
-    <div ng-controller='base64Ctrl'>
-      <div class="container-fluid">
-        <p class="text-info" align="center">Upload Images to Firebase</p>
-        <hr />
+    <h1 class="text-info" align="center">Upload Images to Firebase 3</h1>
 
-        <form ng-submit="uploadFile()">
-          <input type="file" name="file" class="inputimg" id="nameImg" accept="image/*">
-          <br />
-          <span class="input-group-btn">
-                  <button  type="submit" class="btn btn-block">Upload Image
-                    <i class="material-icons">send</i>
-                  </button>
-            </span>
-        </form>
-        <hr />
-        <div ng-repeat="img in imgs | toArray | orderBy: '-date'" class="col-xs-12 col-sm-6 col-md-3">
-          <img ng-src="{{img.base64}}">
-          <a class="btn btn-danger btn-block" ng-click="deleteimg(img.$id)">Delete</a>
-        </div>
+    <br />
+
+    <input type="file" accept="image/*" custom-on-change="vm.image" />
+    <br>
+    <div ng-repeat="image in vm.images | orderBy: '-date'" class="col-xs-6 col-sm-6 col-md-3">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <img ng-src="{{image.url}}">
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6">
+        <a href="{{image.url}}" class="btn btn-info btn-block" download>Download</a>
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6">
+        <a class="btn btn-danger btn-block" ng-click="vm.deleteImg(image.$id)">Delete</a>
       </div>
     </div>
-    <script src="/js/imageupload.js" charset="utf-8"></script>
-  </body>
+
+  </div>
+</div>
+<script src="/js/imageupload.js" charset="utf-8"></script>
+</body>
 </html>

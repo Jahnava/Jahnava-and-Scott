@@ -1,65 +1,100 @@
-var img2fire = angular.module('img2fire', ['firebase', 'angular.filter']);
+(function() {
+  'use strict';
 
-img2fire.controller("base64Ctrl", function($scope, $firebaseArray) {
+  angular
+    .module('myApp', ["firebase"])
+    .run(function () {
+    var config = {
+      apiKey: "AIzaSyBMLE8weG3ca_9PwPXRHPha6WLFkiiSnZY",
+      authDomain: "jahnava-548da.firebaseapp.com",
+      databaseURL: "https://jahnava-548da.firebaseio.com",
+      storageBucket: "jahnava-548da.appspot.com",
+      messagingSenderId: "603228140353"
+    };
+    firebase.initializeApp(config);
+    })
+    .controller('imagesController', imagesController)
+    .directive('customOnChange', customOnChange);
 
-  var ref = new Firebase("https://base64images.firebaseio.com/");
+  function imagesController ($firebaseArray) {
 
-  var img = new Firebase("https://base64images.firebaseio.com/images");
-  $scope.imgs = $firebaseArray(img);
+    var vm = this;
+    var storageService = firebase.storage();
+    var ref = firebase.database().ref();
+    var list = $firebaseArray(ref);
+    vm.images = list;
+    vm.deleteImg = deleteImg;
+    vm.downloadImg = downloadImg;
 
-  var _validFileExtensions = [".jpg", ".jpeg", ".bmp", ".gif", ".png"];
-  $scope.uploadFile = function() {
-    var sFileName = $("#nameImg").val();
-    if (sFileName.length > 0) {
-      var blnValid = false;
-      for (var j = 0; j < _validFileExtensions.length; j++) {
-        var sCurExtension = _validFileExtensions[j];
-        if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
-          blnValid = true;
-          var filesSelected = document.getElementById("nameImg").files;
-          if (filesSelected.length > 0) {
-            var fileToLoad = filesSelected[0];
+    vm.image = function(event){
+      event.preventDefault();
+        var file = event.target.files[0];
+      uploadImage(file);
+      };
 
-            var fileReader = new FileReader();
+    function uploadImage(file) {
+      var random = parseInt(Math.random() * 1000000);
+      var refStorage = storageService.ref('uploads').child(random.toString()).child(file.name);
+      var uploadTask = refStorage.put(file);
 
-            fileReader.onload = function(fileLoadedEvent) {
-              var textAreaFileContents = document.getElementById(
-                "textAreaFileContents"
-              );
+      uploadTask.on('state_changed', null, function(error){
+        console.log('upload error', error);
+      }, function() {
+        var imageData = {
+          url: uploadTask.snapshot.downloadURL,
+          bytes: uploadTask.snapshot.totalBytes,
+          name: uploadTask.h.name,
+          path: uploadTask.h.fullPath,
+          date: uploadTask.h.timeCreated
+        };
 
-
-              $scope.imgs.$add({
-                date: Firebase.ServerValue.TIMESTAMP,
-                base64: fileLoadedEvent.target.result
-              });
-            };
-
-            fileReader.readAsDataURL(fileToLoad);
-          }
-          break;
-        }
+        list.$add(imageData).then(function(ref) {
+          swal("Success", "Your image has been upload", "success")
+        });
       }
-
-      if (!blnValid) {
-        alert('File is not valid');
-        return false;
-      }
+    );
     }
 
-    return true;
-  }
+    function downloadImg(id) {
+      var image = list.$getRecord(id);
+      window.open(image.url, 'Download');
+    }
 
-  $scope.deleteimg = function(imgid) {
-    var r = confirm("Do you want to remove this image ?");
-    if (r == true) {
-      $scope.imgs.forEach(function(childSnapshot) {
-        if (childSnapshot.$id == imgid) {
-            $scope.imgs.$remove(childSnapshot).then(function(ref) {
-              ref.key() === childSnapshot.$id; // true
-            });
-        }
+    function deleteImg(id) {
+      var image = list.$getRecord(id);
+
+      swal({
+        title: "Are you sure?",
+        text: "Do you want to remove this image?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes, delete it!",
+        closeOnConfirm: false
+      },
+      function(){
+        var imgRef = storageService.ref(image.path);
+
+        imgRef.delete().then(function() {
+          list.$remove(image).then(function(ref) {
+            swal("Deleted!", "Your image has been deleted.", "success");
+          });
+        }).catch(function(error) {
+          console.log('an error occurred!', error);
+        });
       });
+
     }
   }
 
-});
+  function customOnChange() {
+    return {
+      restrict: 'A',
+      link: function (scope, element, attrs) {
+        var onChangeHandler = scope.$eval(attrs.customOnChange);
+        element.bind('change', onChangeHandler);
+      }
+    };
+  }
+
+})();
