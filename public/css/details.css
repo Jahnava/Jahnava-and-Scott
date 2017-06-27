@@ -217,6 +217,7 @@ a {
 
 /*p1*/
 
+
 /*scroll box wedding*/
 .scrollArea {
 width: 520px;
@@ -279,32 +280,48 @@ box-shadow: -8px -9px 300px 51px rgba(8,5,15,1);
 
 
 /*p4*/
-@import url(http://fonts.googleapis.com/css?family=Varela+Round);
+/*image settings*/
+@import url(https://fonts.googleapis.com/css?family=Anaheim);
 
-p {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+	box-sizing: border-box;
+}
+*:before,
+*:after{
+	box-sizing: border-box;
+}
+html,
+body{
+	min-height: 100%;
+}
+body{
+	background-image: radial-gradient(mintcream 0%, lightgray 0%);
 }
 
-h1 {
-  text-align: center;
-  font-style: italic;
-  -webkit-box-shadow: inset -8px -9px 300px 51px rgba(75,11,224,1);
--moz-box-shadow: inset -8px -9px 300px 51px rgba(75,11,224,1);
-box-shadow: inset -8px -9px 300px 51px rgba(75,11,224,1);
+img{
+	-webkit-filter: grayscale(1);
+	cursor: pointer;
+	transition: all .5s ease;
+}
+img:hover{
+	-webkit-filter: grayscale(0);
+  transform: scale(1.2,1.2);
 }
 
+/*upload button*/
 .uploadButton {
-   background-color: red;
+   background-color: ;
    color: white;
    padding: 15px 32px;
-   text-align: center;
    text-decoration: none;
-   display: inline-block;
    font-size: 16px;
    font-weight: bold;
-   border-radius: 12px;
-   margin-left: 35%;
-   margin-top: 2%;
+   margin-top: 1%;
+   margin-bottom: 2%;
 }
 
 .uploadButton:hover {
@@ -323,6 +340,23 @@ box-shadow: inset -8px -9px 300px 51px rgba(75,11,224,1);
   bottom: -30px;
 }
 
+/*image slider*/
+@import url(http://fonts.googleapis.com/css?family=Varela+Round);
+
+p {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-style: italic;
+  -webkit-box-shadow: inset -8px -9px 300px 51px rgba(75,11,224,1);
+-moz-box-shadow: inset -8px -9px 300px 51px rgba(75,11,224,1);
+box-shadow: inset -8px -9px 300px 51px rgba(75,11,224,1);
+}
+
+
+
 
 .slides {
     padding: 0;
@@ -331,7 +365,7 @@ box-shadow: inset -8px -9px 300px 51px rgba(75,11,224,1);
     display: block;
     margin: 0 auto;
     position: relative;
-    margin-top: 70px;
+    margin-top: 10px;
 }
 
 .slides * {
@@ -436,6 +470,11 @@ input#img-5:checked ~ .nav-dots label#img-dot-5,
 input#img-6:checked ~ .nav-dots label#img-dot-6 {
 	background: rgba(0, 0, 0, 0.8);
 }
+
+
+
+
+
 
 
 /*p5*/
