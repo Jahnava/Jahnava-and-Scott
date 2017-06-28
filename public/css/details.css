@@ -10,6 +10,13 @@ html, body, .page {
   /*color: #fff;*/
   overflow-x:scroll;
   overflow-x: hidden;
+  background-image: url('/images/stars.gif');background-image: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 500px;
+     height: 100%;
 }
 
 * {
