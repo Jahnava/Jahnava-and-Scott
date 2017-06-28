@@ -36,7 +36,7 @@ html, body, .page {
   min-height: 500px;
    height: 100%;
 }
-#p2 { background-image:url('https://images.pexels.com/photos/281616/pexels-photo-281616.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');background-image: no-repeat center center fixed;
+#p2 { background-image:url('/images/flowers.jpeg');background-image: no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -44,7 +44,7 @@ html, body, .page {
   min-height: 500px;
    height: 100%; }
 #p3 { background: gold; }
-#p4 { background-image: url('https://cdn.pixabay.com/photo/2017/03/27/21/38/sunset-2180346__340.jpg');
+#p4 { background-image: url('/images/sunset.jpg');
 background-image: no-repeat center center fixed;
 -webkit-background-size: cover;
 -moz-background-size: cover;
@@ -220,7 +220,7 @@ a {
 /*p1*/
 
 .scrollTitle{
-  background-image: url('https://cdn.pixabay.com/photo/2017/04/01/12/33/piano-2193513_960_720.jpg');
+  background-image: url('/images/piano-text.jpg');
 }
 
 /*scroll box wedding*/
@@ -376,7 +376,7 @@ border-color: transparent transparent #f08080 transparent;
 @import url(https://fonts.googleapis.com/css?family=Anaheim);
 
 #p4Title {
-  background-image: url('https://cdn.pixabay.com/photo/2017/03/27/21/38/sunset-2180346__340.jpg');
+  background-image: url('/images/sunset.jpg');
   background-image: no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
