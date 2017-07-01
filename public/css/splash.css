@@ -481,3 +481,8 @@ border-color: transparent transparent #f08080 transparent;
   11%  { top:100%; opacity: 0; }
   100% { top:20%; }
 }
+
+/*mouse*/
+html {
+  cursor:url("http://arandas.lxsite.com/images/butterfly.gif"), default;
+}
