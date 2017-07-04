@@ -1,12 +1,12 @@
 {
-  "name": "hacker-news",
+  "name": "Our Wedding",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Jahnava",
+  "author": "Jahnava and Scott",
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.2"
