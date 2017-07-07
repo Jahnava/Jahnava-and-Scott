@@ -43,7 +43,7 @@ html, body, .page {
   min-height: 500px;
    height: 100%;
 }
-#p2 { background-image:url('/images/flowers.jpeg');background-image: no-repeat center center fixed;
+#p2 { background-image:url('https://cdn.pixabay.com/photo/2012/02/27/16/57/background-17431_960_720.jpg');background-image: no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -289,7 +289,7 @@ h2 {
   font: normal Varela Round, sans-serif;
   letter-spacing: 5px;
   position: absolute;
-  top: 20%;
+  top: 30%;
   width: 100%;
   animation: move linear 2000ms infinite;
 }
@@ -358,6 +358,22 @@ h2 {
 }
 
 /* canvas moving background */
+#prettyBox{
+  width: 90%;
+  height: 110%;
+  background-image: url('/images/fromeFlowers.png');
+  background-image: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-55%, -55%);
+}
+
 canvas {
 	background: pink;
 }
@@ -392,9 +408,6 @@ canvas {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   box-shadow: 0px 10px 10px rgba(0,0,0,0.5);
--webkit-box-shadow: -1px 2px 81px 37px rgba(15,12,15,0.68);
--moz-box-shadow: -1px 2px 81px 37px rgba(15,12,15,0.68);
-box-shadow: -1px 2px 81px 37px rgba(15,12,15,0.68);
 }
 
 #lid {
@@ -406,13 +419,18 @@ box-shadow: -1px 2px 81px 37px rgba(15,12,15,0.68);
   border-style: solid;
   border-width: 0 150px 150px 150px;
   border-color: transparent transparent #f08080 transparent;
-
 }
+
 
 #letter {
   position: relative;
   background: #adbce6;
-  background-image: url('http://lorempixel.com/400/200/nature');
+  background-image: url('/images/purple.jpg');
+  background-image: no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   top: -150px;
   width: 280px;
   height: 150px;
@@ -421,7 +439,6 @@ box-shadow: -1px 2px 81px 37px rgba(15,12,15,0.68);
   animation: out 5s infinite linear;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
   text-align: center;
-  color:red;
   font-style: italic;
   font-size: 20px;
 }
@@ -468,7 +485,7 @@ border-color: transparent transparent #f08080 transparent;
 @import url(https://fonts.googleapis.com/css?family=Anaheim);
 
 .confetti{
-background-image: url('https://media.giphy.com/media/120ErahsQyf1q8/giphy.gif');
+background-image: url('/images/confetti.webp');
 }
 
 #p4Title {
@@ -524,7 +541,7 @@ img:hover{
 }
 
 .uploadButton:hover {
-    background-image:url('https://media.giphy.com/media/120ErahsQyf1q8/giphy.gif');
+    background-image:url('/images/confetti.webp');
     color:red;
 }
 
