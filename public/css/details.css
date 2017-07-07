@@ -35,7 +35,7 @@ html, body, .page {
   left: 200%;
 }
 
-#p1 { background-image: url('/images/flowerpiano2.jpg');background-image: no-repeat center center fixed;
+#p1 { background-image: url('/images/flowerpiano3.jpg');background-image: no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -293,62 +293,62 @@ h2 {
 @keyframes move {
   0% {
     text-shadow:
-      4px -4px 0 hsla(0, 100%, 50%, 1),
-      3px -3px 0 hsla(0, 100%, 50%, 1),
-      2px -2px 0 hsla(0, 100%, 50%, 1),
-      1px -1px 0 hsla(0, 100%, 50%, 1),
-      -4px 4px 0 hsla(180, 100%, 50%, 1),
-      -3px 3px 0 hsla(180, 100%, 50%, 1),
-      -2px 2px 0 hsla(180, 100%, 50%, 1),
-      -1px 1px 0 hsla(180, 100%, 50%, 1)
+      4px -4px 0 hsla(200, 100%, 50%, 1),
+      3px -3px 0 hsla(200, 100%, 50%, 1),
+      2px -2px 0 hsla(200, 0%, 50%, 1),
+      1px -1px 0 hsla(200, 100%, 50%, 1),
+      -4px 4px 0 hsla(300, 100%, 50%, 1),
+      -3px 3px 0 hsla(300, 0%, 50%, 1),
+      -2px 2px 0 hsla(300, 100%, 50%, 1),
+      -1px 1px 0 hsla(300, 100%, 50%, 1)
     ;
   }
   25% {
     text-shadow:
-      -4px -4px 0 hsla(180, 100%, 50%, 1),
-      -3px -3px 0 hsla(180, 100%, 50%, 1),
-      -2px -2px 0 hsla(180, 100%, 50%, 1),
-      -1px -1px 0 hsla(180, 100%, 50%, 1),
-      4px 4px 0 hsla(0, 100%, 50%, 1),
-      3px 3px 0 hsla(0, 100%, 50%, 1),
-      2px 2px 0 hsla(0, 100%, 50%, 1),
-      1px 1px 0 hsla(0, 100%, 50%, 1)
+      -4px -4px 0 hsla(300, 0%, 50%, 1),
+      -3px -3px 0 hsla(300, 100%, 50%, 1),
+      -2px -2px 0 hsla(300, 100%, 50%, 1),
+      -1px -1px 0 hsla(300, 100%, 50%, 1),
+      4px 4px 0 hsla(290, 0%, 50%, 1),
+      3px 3px 0 hsla(290, 100%, 50%, 1),
+      2px 2px 0 hsla(290, 100%, 50%, 1),
+      1px 1px 0 hsla(290, 0%, 50%, 1)
     ;
   }
   50% {
     text-shadow:
-      /*-4px 4px 0 hsla(0, 100%, 50%, 1),
-      -3px 3px 0 hsla(0, 100%, 50%, 1),
-      -2px 2px 0 hsla(0, 100%, 50%, 1),
-      -1px 1px 0 hsla(0, 100%, 50%, 1),
-      4px -4px 0 hsla(180, 100%, 50%, 1),
-      3px -3px 0 hsla(180, 100%, 50%, 1),
-      2px -2px 0 hsla(180, 100%, 50%, 1),
-      1px -1px 0 hsla(180, 100%, 50%, 1)
-    ;*/
+      -4px 4px 0 hsla(300, 100%, 50%, 1),
+      -3px 3px 0 hsla(300, 100%, 50%, 1),
+      -2px 2px 0 hsla(300, 100%, 50%, 1),
+      -1px 1px 0 hsla(300, 100%, 50%, 1),
+      4px -4px 0 hsla(280, 100%, 50%, 1),
+      3px -3px 0 hsla(280, 100%, 50%, 1),
+      2px -2px 0 hsla(280, 100%, 50%, 1),
+      1px -1px 0 hsla(280, 0%, 0%, 1)
+    ;
   }
   75% {
     text-shadow:
-      /*4px 4px 0 hsla(180, 100%, 50%, 1),
-      3px 3px 0 hsla(180, 100%, 50%, 1),
-      2px 2px 0 hsla(180, 100%, 50%, 1),
-      1px 1px 0 hsla(180, 100%, 50%, 1),
-      -4px -4px 0 hsla(0, 100%, 50%, 1),
-      -3px -3px 0 hsla(0, 100%, 50%, 1),
-      -2px -2px 0 hsla(0, 100%, 50%, 1),
-      -1px -1px 0 hsla(0, 100%, 50%, 1)
-    ;*/
+      4px 4px 0 hsla(200, 0%, 50%, 1),
+      3px 3px 0 hsla(200, 100%, 50%, 1),
+      2px 2px 0 hsla(200, 0%, 50%, 1),
+      1px 1px 0 hsla(200, 100%, 50%, 1),
+      -4px -4px 0 hsla(300, 100%, 50%, 1),
+      -3px -3px 0 hsla(280, 100%, 50%, 1),
+      -2px -2px 0 hsla(280, 100%, 50%, 1),
+      -1px -1px 0 hsla(290, 0%, 50%, 1)
+    ;
   }
   100% {
     text-shadow:
-      4px -4px 0 hsla(0, 100%, 50%, 0),
-      3px -3px 0 hsla(0, 100%, 50%, 1),
-      2px -2px 0 hsla(0, 100%, 50%, 1),
-      1px -1px 0 hsla(0, 100%, 50%, 1),
-      -4px 4px 0 hsla(180, 100%, 50%, 1),
-      -3px 3px 0 hsla(180, 100%, 50%, 1),
-      -2px 2px 0 hsla(180, 100%, 50%, 1),
-      -1px 1px 0 hsla(180, 100%, 50%, 1)
+      4px -4px 0 hsla(300, 0%, 50%, 0),
+      3px -3px 0 hsla(300, 100%, 50%, 1),
+      2px -2px 0 hsla(300, 0%, 0%, 1),
+      1px -1px 0 hsla(300, 100%, 50%, 1),
+      -4px 4px 0 hsla(300, 0%, 50%, 1),
+      -3px 3px 0 hsla(300, 100%, 50%, 1),
+      -2px 2px 0 hsla(300, 0%, 50%, 1),
+      -1px 1px 0 hsla(300, 100%, 50%, 1)
     ;
   }
 }
@@ -398,7 +398,7 @@ canvas {
    height: 150px;
    position: absolute;
    left: 50%;
-   top: 50%;
+   top: 65%;
    margin-left: -150px;
    margin-top: -0px;
   border-bottom-left-radius: 20px;
