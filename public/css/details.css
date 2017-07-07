@@ -43,13 +43,7 @@ html, body, .page {
   min-height: 500px;
    height: 100%;
 }
-#p2 { background-image:url('https://cdn.pixabay.com/photo/2012/02/27/16/57/background-17431_960_720.jpg');background-image: no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  min-height: 500px;
-   height: 100%;
+#p2 {
   }
 #p3 { background: gold; }
 #p4 { background-image: url('/images/flowers2.jpeg');
@@ -235,7 +229,7 @@ a {
 /*scroll box wedding*/
 .scrollArea {
 width: 520px;
-height: 250px;
+height: 350px;
 margin-top: 15px;
 padding-left: 5px;
 padding-right: 5px;
@@ -249,6 +243,7 @@ margin-left: -30px;
 -webkit-box-shadow: inset -8px -24px 300px 78px rgba(0,0,0,0.83);
 -moz-box-shadow: inset -8px -24px 300px 78px rgba(0,0,0,0.83);
 box-shadow: inset -8px -24px 300px 78px rgba(0,0,0,0.83);
+
 }
 
 ::-webkit-scrollbar {
@@ -268,10 +263,11 @@ box-shadow: inset -8px -24px 300px 78px rgba(0,0,0,0.83);
 
 
 iframe {
-  width:400px;
-  height: 300px;
+  width:450px;
+  height: 260px;
   text-align: center;
-  margin-right: 500%;
+/  /*margin-right: 500%;*/
+
 }
 
 /*p2*/
