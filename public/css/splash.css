@@ -12,7 +12,7 @@ text-shadow: 0 0 3px white, 0 0 15px silver;
   font-family: 'Lobster', cursive;
   text-align: center;
   font-size: 3em;
-  color: lightgrey;
+  color: lightgray;
 }
 
 /*doors*/
@@ -92,76 +92,6 @@ html, body {
   display: none;
 }
 
-/*envelope*/
-
-/*#envelope  {
-  background: #f08080;
-   width: 300px;
-   height: 150px;
-   position: absolute;
-   left: 50%;
-   top: 50%;
-   margin-left: -150px;
-   margin-top: -0px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  box-shadow: 0px 10px 10px rgba(0,0,0,0.5);
-}
-
-#lid {
-
-  position: relative;
-  top: -150px;
-  width: 0px;
-  height: 0px;
-  border-style: solid;
-  border-width: 0 150px 150px 150px;
-  border-color: transparent transparent #f08080 transparent;
-
-}
-
-#letter {
-  background-image: url('/images/married.jpg');
-  position: relative;
-  background: #adbce6;
-  top: -150px;
-  width: 280px;
-  height: 150px;
-  left: 10px;
-  top: -200px;
-  animation: out 5s infinite linear;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-}
-
-#left-corner {
-  position: relative;
-  top: -315px;
-  left: 10px;
-  width: 0px;
-  height: 0px;
-  border-style: solid;
-  border-width: 150px 0 0 250px;
-  border-color: transparent transparent transparent #f08080;
-
-}
-
-#right-corner {
-  position: relative;
-  top: -470px;
-  left: 50px;
-  width: 0px;
-height: 0px;
-border-style: solid;
-border-width: 0 0 150px 250px;
-border-color: transparent transparent #f08080 transparent;
-}
-
-@keyframes out {
-	0% {top: -220px;}
-  25% {top: -290px;}
-  50% {top: -300px;}
-  75% {top: -200px;}
-}*/
 
 /*floating hearts*/
 /* heart-small */
@@ -556,15 +486,16 @@ border-color: transparent transparent #f08080 transparent;
 
 /*mouse*/
 html {
-  cursor:url("http://arandas.lxsite.com/images/butterfly.gif"), default;
+  cursor:url("http://arandas.lxsite.com/images/butterfly.gif"), default;\
 }
 
 
-.trail{
-  position: absolute;
-  height: 6px; width 6px;
-  border-radius: 3px;
-  background: teal;
-}
+/*Mouse Trail Tidbit*/
+.trail { /* className for the trail elements */
+    position: absolute;
+    height: 6px; width: 6px;
+    border-radius: 3px;
+    background: teal;
+  }
 
-/*new*/
+

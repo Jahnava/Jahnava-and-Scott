@@ -263,11 +263,12 @@ box-shadow: inset -8px -24px 300px 78px rgba(0,0,0,0.83);
 
 
 iframe {
-  width:450px;
-  height: 260px;
+  width:520px;
+  height: 360px;
   text-align: center;
-/  /*margin-right: 500%;*/
-
+  margin-left: -30px;
+  margin-right: 500%;
+  float: left;
 }
 
 /*p2*/
