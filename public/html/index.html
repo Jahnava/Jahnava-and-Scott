@@ -3,17 +3,68 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/css/splash.css">
-  <!--  <script type="text/javascript" src="bubbletrail.js"></script>-->
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" charset="utf-8"></script>
+
     <title>Scott and Jahnava</title>
   </head>
-  <header>
+  <!-- <header>
     <div id='wedding'>
       Click On Your Invitation!
     </div>
-  </header>
+  </header> -->
   <body>
 
-    <div id="envelope">
+<!-- music -->
+      <iframe id="song" src="https://www.youtube.com/embed/OqOm7PvfObU?autoplay=1&start=153" frameborder="0" allowfullscreen></iframe>
+
+<!-- doors -->
+<div class="doors">
+  <h2>The Wedding of Scott and Jahnava.</h2>
+
+
+  <div class="inner">
+    <!--  Content of page -->
+    <img class="heart-small" src="/images/heart-small.png" alt="" />
+
+    <img class="heart-small2" src="/images/fam-heart.png" alt="" />
+    <!-- <img class="heart-small3" src="/images/heart-small.png" alt="" />
+    <img class="heart-small4" src="/images/heart-small.png" alt="" /> -->
+    <img class="heart-small4" src="/images/beach-heart.png" alt="" />
+    <img class="heart-small6" src="/images/heart-small.png" alt="" />
+    <img class="heart-small7" src="/images/ring-heart.png" alt="" />
+    <img class="heart-small8" src="/images/heart-small.png" alt="" />
+
+    <img class="heart-medium" src="/images/heart-medium.png" alt="" />
+    <img class="heart-medium2" src="/images/heart-medium.png" alt="" />
+    <img class="heart-medium3" src="/images/blueshirt-medium.png" alt="" />
+    <!-- <img class="heart-medium4" src="/images/heart-medium.png" alt="" /> -->
+    <img class="heart-medium5" src="/images/thanksgiving.png" alt="" />
+    <img class="heart-medium6" src="/images/heart-medium.png" alt="" />
+    <img class="heart-medium7" src="/images/us.png" alt="" />
+
+
+    <img class="heart-large" src="/images/beach2.png" alt=""/>
+    <!-- <img class="heart-large2" src="/images/heart-large.png" alt=""/> -->
+    <img class="heart-large3" src="/images/smile-large.png" alt=""/>
+    <img class="heart-large4" src="/images/heart-large.png" alt=""/>
+
+    <img class="heart-outline" src="/images/heart-outline.png" alt=""/>
+    <img class="heart-outline2" src="/images/heart-outline.png" alt=""/>
+    <img class="heart-outline3" src="/images/heart-outline.png" alt=""/>
+    <img class="heart-outline4" src="/images/heart-outline.png" alt=""/>
+
+  </div>
+
+  <div class="left"></div>
+  <div class="right"></div>
+</div>
+
+
+
+      <!-- envelope -->
+
+    <!-- <div id="envelope">
         <a style="display:block" href="/details">
       <div id="lid"></div>
         <a style="display:block" href="/details"><div id="letter">
@@ -23,40 +74,74 @@
         <a  href="/details">
         <div id="right-corner"></div>
         <a  href="/details">
-      </div>
+      </div> -->
 <!-- floating hearts -->
 
-<img class="heart-small" src="/images/heart-small.png" alt="" />
-
-<img class="heart-small2" src="/images/fam-heart.png" alt="" />
-<!-- <img class="heart-small3" src="/images/heart-small.png" alt="" />
-<img class="heart-small4" src="/images/heart-small.png" alt="" /> -->
-<img class="heart-small4" src="/images/beach-heart.png" alt="" />
-<img class="heart-small6" src="/images/heart-small.png" alt="" />
-<img class="heart-small7" src="/images/ring-heart.png" alt="" />
-<img class="heart-small8" src="/images/heart-small.png" alt="" />
-
-<img class="heart-medium" src="/images/heart-medium.png" alt="" />
-<img class="heart-medium2" src="/images/heart-medium.png" alt="" />
-<img class="heart-medium3" src="/images/blueshirt-medium.png" alt="" />
-<!-- <img class="heart-medium4" src="/images/heart-medium.png" alt="" /> -->
-<img class="heart-medium5" src="/images/thanksgiving.png" alt="" />
-<img class="heart-medium6" src="/images/heart-medium.png" alt="" />
-<img class="heart-medium7" src="/images/us.png" alt="" />
 
 
-<img class="heart-large" src="/images/beach2.png" alt=""/>
-<!-- <img class="heart-large2" src="/images/heart-large.png" alt=""/> -->
-<img class="heart-large3" src="/images/smile-large.png" alt=""/>
-<img class="heart-large4" src="/images/heart-large.png" alt=""/>
+<!-- <script src="/js/app.js" charset="utf-8"></script> -->
 
-<img class="heart-outline" src="/images/heart-outline.png" alt=""/>
-<img class="heart-outline2" src="/images/heart-outline.png" alt=""/>
-<img class="heart-outline3" src="/images/heart-outline.png" alt=""/>
-<img class="heart-outline4" src="/images/heart-outline.png" alt=""/>
-
-<!-- bubbles -->
-
+<script>
+// dots is an array of Dot objects,
+// mouse is an object used to track the X and Y position
+   // of the mouse, set with a mousemove event listener below
+var dots = [],
+    mouse = {
+      x: 0,
+      y: 0
+    };
+// The Dot object used to scaffold the dots
+var Dot = function() {
+  this.x = 0;
+  this.y = 0;
+  this.node = (function(){
+    var n = document.createElement("div");
+    n.className = "trail";
+    document.body.appendChild(n);
+    return n;
+  }());
+};
+// The Dot.prototype.draw() method sets the position of
+  // the object's <div> node
+Dot.prototype.draw = function() {
+  this.node.style.left = this.x + "px";
+  this.node.style.top = this.y + "px";
+};
+// Creates the Dot objects, populates the dots array
+for (var i = 0; i < 12; i++) {
+  var d = new Dot();
+  dots.push(d);
+}
+// This is the screen redraw function
+function draw() {
+  // Make sure the mouse position is set everytime
+    // draw() is called.
+  var x = mouse.x,
+      y = mouse.y;
+  // This loop is where all the 90s magic happens
+  dots.forEach(function(dot, index, dots) {
+    var nextDot = dots[index + 1] || dots[0];
+    dot.x = x+1;
+    dot.y = y-1;
+    dot.draw();
+    x += (nextDot.x - dot.x) * .6;
+    y += (nextDot.y - dot.y) * .6;
+  });
+}
+addEventListener("mousemove", function(event) {
+  //event.preventDefault();
+  mouse.x = event.pageX;
+  mouse.y = event.pageY;
+});
+// animate() calls draw() then recursively calls itself
+  // everytime the screen repaints via requestAnimationFrame().
+function animate() {
+  draw();
+  requestAnimationFrame(animate);
+}
+// And get it started by calling animate().
+animate();
+</script>
 
 <script>
 // dots is an array of Dot objects,

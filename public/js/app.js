@@ -6,52 +6,122 @@ $(function(){
 });
 
 //bubbles
-// Create empty
-var bubbletrail= {};
-
-
-
-// Add public parameters with default values
-bubbletrail.size= 10;
-bubbletrail.jitter= 50;
-bubbletrail.zindex= 5;
-bubbletrail.life= 1000;
-
-
-
-// Create after the page is loaded
-window.onload= function() {
-	window.addEventListener('mousemove', function(e) {
-		// Animate one dot
-		var animate= function(i) {
-			var j= (1-i)*bubbletrail.jitter;
-			var bubble= document.createElement('div');
-			var size= Math.ceil(Math.random()*bubbletrail.size*i);
-			var sizepx= size+'px';
-			bubble.style.position= 'fixed';
-			bubble.style.top=  e.pageY +
-				Math.round((Math.random()-0.5)*j - size/2) + 'px';
-			bubble.style.left= e.pageX +
-				Math.round((Math.random()-0.5)*j - size/2) + 'px';
-			bubble.style.width= sizepx;
-			bubble.style.height= sizepx;
-			bubble.style.background= 'hsla(' +
-				Math.round(Math.random()*360) + ', ' +
-				'100%, ' +
-				'50%, ' +
-				i + ')';
-			bubble.style.borderRadius= sizepx;
-			bubble.style.pointerEvents= 'none';
-			bubble.style.zIndex= bubbletrail.zindex +
-				Math.round(5*(Math.random()-0.5));
-			document.body.appendChild(bubble);
-			window.setTimeout(function() {
-				document.body.removeChild(bubble);
-			}, Math.round(Math.random()*i*bubbletrail.life));
-		};
-		// Create a bunch of dots
-		for (var i= 0.2; i <= 1.0; i+= 0.2) {
-			animate(i);
-		}
-	});
+// dots is an array of Dot objects,
+// mouse is an object used to track the X and Y position
+   // of the mouse, set with a mousemove event listener below
+var dots = [],
+    mouse = {
+      x: 0,
+      y: 0
+    };
+// The Dot object used to scaffold the dots
+var Dot = function() {
+  this.x = 0;
+  this.y = 0;
+  this.node = (function(){
+    var n = document.createElement("div");
+    n.className = "trail";
+    document.body.appendChild(n);
+    return n;
+  }());
 };
+// The Dot.prototype.draw() method sets the position of
+  // the object's <div> node
+Dot.prototype.draw = function() {
+  this.node.style.left = this.x + "px";
+  this.node.style.top = this.y + "px";
+};
+// Creates the Dot objects, populates the dots array
+for (var i = 0; i < 12; i++) {
+  var d = new Dot();
+  dots.push(d);
+}
+// This is the screen redraw function
+function draw() {
+  // Make sure the mouse position is set everytime
+    // draw() is called.
+  var x = mouse.x,
+      y = mouse.y;
+  // This loop is where all the 90s magic happens
+  dots.forEach(function(dot, index, dots) {
+    var nextDot = dots[index + 1] || dots[0];
+    dot.x = x+1;
+    dot.y = y-1;
+    dot.draw();
+    x += (nextDot.x - dot.x) * .6;
+    y += (nextDot.y - dot.y) * .6;
+  });
+}
+addEventListener("mousemove", function(event) {
+  //event.preventDefault();
+  mouse.x = event.pageX;
+  mouse.y = event.pageY;
+});
+// animate() calls draw() then recursively calls itself
+  // everytime the screen repaints via requestAnimationFrame().
+function animate() {
+  draw();
+  requestAnimationFrame(animate);
+}
+// And get it started by calling animate().
+animate();
+
+//new
+var preloader = (function(){
+
+  'use-strict';
+
+  // Vars
+  var main = $('.main'),
+      btn = $('.enter'),
+      page = $('.page');
+
+
+  return {
+
+    run: function(){
+      // show on load
+      main.show();
+      // apend and prepend html
+      main.prepend(this.tmpl.tl + this.tmpl.tr);
+      main.append(this.tmpl.bl + this.tmpl.br);
+      // on click open site
+     this.click_btn();
+    },
+
+
+    tmpl:{
+      'tl': '<span class="tl"></span>',
+      'tr': '<span class="tr"></span>',
+      'bl': '<span class="bl"></span>',
+      'br': '<span class="br"></span>'
+    },
+
+
+    click_btn: function(){
+      btn.on('click',function(){
+        page.addClass('loaded');
+        btn.addClass('hideThis');
+        preloader.animations();
+      });
+    },
+
+    // for firefox i try in css but not work
+    animations: function(){
+      var tl = $('.loaded .tl'),
+          tr = $('.loaded .tr'),
+          bl = $('.loaded .bl'),
+          br = $('.loaded .br');
+
+      tl.delay(800).animate({top:'-100%',left:'-100%'},500);
+      tr.delay(600).animate({top:'-100%',left:'100%'},500);
+      bl.delay(400).animate({top:'100%',left:'100%'},500);
+      br.delay(200).animate({top:'100%',left:'-100%'},500);
+      btn.remove();
+    }
+  };
+})(jQuery);
+
+preloader.run();
+
+//new

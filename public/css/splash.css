@@ -1,14 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Lobster);
 
 html {
-   background-image:url('/images/plantheart.jpg');
+   background-image:url('/images/married.jpg');
    background-image: no-repeat center center fixed;
      -webkit-background-size: cover;
  }
 
-
 body {
-text-shadow: 0 0 3px white, 0 0 15px white;
+text-shadow: 0 0 3px white, 0 0 15px silver;
   overflow: hidden;
   font-family: 'Lobster', cursive;
   text-align: center;
@@ -16,82 +15,83 @@ text-shadow: 0 0 3px white, 0 0 15px white;
   color: lightgray;
 }
 
-/*a {
-  color:black;
-  text-decoration: none;
-  font-size: 25px;
-}*/
-
-
-
-#envelope  {
-  background: #f08080;
-   width: 300px;
-   height: 150px;
-   position: absolute;
-   left: 50%;
-   top: 50%;
-   margin-left: -150px;
-   margin-top: -0px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  box-shadow: 0px 10px 10px rgba(0,0,0,0.5);
+/*doors*/
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-#lid {
-
+.doors {
+  box-sizing: border-box;
   position: relative;
-  top: -150px;
-  width: 0px;
-  height: 0px;
-  border-style: solid;
-  border-width: 0 150px 150px 150px;
-  border-color: transparent transparent #f08080 transparent;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+ }
 
+.doors h2 {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  color: yellow;
+  z-index: 10;
+  text-align: center;
+  font-size: 80px;
+  font-family: "Lobster";
+  /*text-transform: uppercase;*/
+  text-shadow: 5px 0 2px #000;
+  transition: transform 2s ease-in-out;
 }
 
-#letter {
-  background-image: url('/images/married.jpg');
-  position: relative;
-  background: #adbce6;
-  top: -150px;
-  width: 280px;
-  height: 150px;
-  left: 10px;
-  top: -200px;
-  animation: out 5s infinite linear;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+.doors:hover h2 {
+  transform: scale(0);
 }
 
-#left-corner {
-  position: relative;
-  top: -315px;
-  left: 10px;
-  width: 0px;
-  height: 0px;
-  border-style: solid;
-  border-width: 150px 0 0 250px;
-  border-color: transparent transparent transparent #f08080;
-
+.doors .left {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  box-shadow: 3px 0 4px #111;
+  background-image: url("https://i.stack.imgur.com/7YKUD.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: width 2s ease-in-out;
+}
+.doors .right {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  box-shadow: 3px 0 4px #111;
+  background-image: url("https://i.stack.imgur.com/7YKUD.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: scaleX(-1);
+  transition: width 2s ease-in-out;
 }
 
-#right-corner {
-  position: relative;
-  top: -470px;
-  left: 50px;
-  width: 0px;
-height: 0px;
-border-style: solid;
-border-width: 0 0 150px 250px;
-border-color: transparent transparent #f08080 transparent;
+.doors:hover .left, .doors:hover .right {
+  width: 5%;
 }
 
-@keyframes out {
-	0% {top: -220px;}
-  25% {top: -290px;}
-  50% {top: -300px;}
-  75% {top: -200px;}
+.inner {
+  width: 100%;
+  height: 100%;
 }
+
+
+/*music*/
+#song {
+  display: none;
+}
+
 
 /*floating hearts*/
 /* heart-small */
@@ -486,7 +486,7 @@ border-color: transparent transparent #f08080 transparent;
 
 /*mouse*/
 html {
-  cursor:url("http://arandas.lxsite.com/images/butterfly.gif"), default;
+  cursor:url("http://arandas.lxsite.com/images/butterfly.gif"), default;\
 }
 
 
@@ -497,3 +497,5 @@ html {
     border-radius: 3px;
     background: teal;
   }
+
+
