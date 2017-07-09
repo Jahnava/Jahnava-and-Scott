@@ -254,3 +254,66 @@ function animate() {
 
 // And get it started by calling animate().
 animate();
+
+
+//lanterns
+window.onload = function() {
+
+      // var canvas = document.getElementById("sky");
+      var context = canvas.getContext("2d");
+      canvas.width = 960;
+      canvas.height = 400;
+      document.body.appendChild(canvas);
+
+      var particles = {},
+          particleIndex = 0,
+          settings = {
+            density: 5,
+            particleSize: 0.5,
+            maxLife: 100,
+          };
+
+      function Particle() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+
+        particleIndex++;
+        particles[particleIndex] = this;
+        this.id = particleIndex;
+        this.life = 0;
+        this.opacity = 0;
+      }
+
+      Particle.prototype.draw = function() {
+
+        this.opacity += 0.1;
+        this.life++;
+        if (this.life >= settings.maxLife) {
+          delete particles[this.id];
+        }
+
+        context.clearRect(settings.leftWall, settings.groundLevel, canvas.width, canvas.height);
+        context.beginPath();
+        context.fillStyle= "rgba(255,255,255,"+this.opacity+")";
+        context.arc(this.x, this.y, settings.particleSize, 0, Math.PI*2, true);
+        context.closePath();
+        context.fill();
+
+      }
+
+      setInterval(function() {
+        context.fillStyle = "rgba(0,0,20,0.2)";
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Draw the particles
+        for (var i = 0; i < settings.density; i++) {
+          if (Math.random() > 0.97) {
+            new Particle();
+          }
+        }
+
+        for (var i in particles) {
+          particles[i].draw();
+        }
+      }, 100);
+    };

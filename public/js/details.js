@@ -37,7 +37,7 @@ $uploadButton.addEventListener('click', function() {
   TweenMax.to($uploadButton, duration * 1.25, {scaleX: 1, scaleY: 1, ease: Back.easeOut, easeParams: [6], delay: delay * 3 });
 });
 
-//moving background
+//moving background p2
 (function($){
 	var canvas = $('#bg').children('canvas'),
 		background = canvas[0],
