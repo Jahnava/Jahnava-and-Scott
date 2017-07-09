@@ -8,13 +8,66 @@
 
     <title>Scott and Jahnava</title>
   </head>
-  <!-- <header>
-    <div id='wedding'>
-      Click On Your Invitation!
-    </div>
-  </header> -->
-  <body>
+  <header>
+  <!-- lanterns -->
+  <canvas id="sky"></canvas>
+<div class="container">
 
+<div class="lines">
+<div class="lantern">
+<div class="hook"></div>
+<div class="light"></div>
+</div>
+<div class="lantern">
+<div class="hook"></div>
+<div class="light" id="blue"></div>
+</div>
+<div class="lantern">
+<div class="hook"></div>
+<div class="light" id="white"></div>
+</div>
+<div class="lantern" id="row-two">
+<div class="hook"></div>
+<div class="light" id="pink"></div>
+</div>
+<div class="lantern" id="row-two">
+<div class="hook"></div>
+<div class="light" id="yellow"></div>
+</div>
+<div class="lantern" id="row-two">
+<div class="hook"></div>
+<div class="light" id="blue"></div>
+</div>
+<div class="lantern" id="row-three">
+<div class="hook"></div>
+<div class="light" id="pink"></div>
+</div>
+<div class="lantern" id="row-three">
+<div class="hook"></div>
+<div class="light" id="white"></div>
+</div>
+
+<svg viewBox = "0 0 100 50" version = "1.1" >
+<path d="M 0 6 q 8 2 14 -6" stroke="grey" stroke-width="0.3" fill="none" />
+<path d="M 14 0 q 23 12 46 0" stroke="grey" stroke-width="0.3" fill="none" />
+<path d="M 60 0 q 23 10 40 5" stroke="grey" stroke-width="0.3" fill="none" />
+
+<path d="M 0 15 q 10 5 25 -3" stroke="grey" stroke-width="0.1" fill="none" />
+<path d="M 25 12 q 25 10 50 0" stroke="grey" stroke-width="0.1" fill="none" />
+<path d="M 75 12 q 10 5 25 5" stroke="grey" stroke-width="0.1" fill="none" />
+
+<path d="M 0 25 q 30 5 50 0" stroke="grey" stroke-width="0.2" fill="none" />
+<path d="M 50 25 q 30 5 50 -10" stroke="grey" stroke-width="0.2" fill="none" />
+</svg>
+
+</div>
+
+</div>
+  <!-- end -->
+
+  </header>
+
+  <body>
 <!-- music -->
       <iframe id="song" src="https://www.youtube.com/embed/OqOm7PvfObU?autoplay=1&start=153" frameborder="0" allowfullscreen></iframe>
 
@@ -27,30 +80,30 @@
     <!--  Content of page -->
     <img class="heart-small" src="/images/heart-small.png" alt="" />
 
-    <img class="heart-small2" src="/images/fam-heart.png" alt="" />
+    <!-- <img class="heart-small2" src="/images/fam-heart.png" alt="" /> -->
     <!-- <img class="heart-small3" src="/images/heart-small.png" alt="" />
     <img class="heart-small4" src="/images/heart-small.png" alt="" /> -->
-    <img class="heart-small4" src="/images/beach-heart.png" alt="" />
+    <!-- <img class="heart-small4" src="/images/beach-heart.png" alt="" /> -->
     <img class="heart-small6" src="/images/heart-small.png" alt="" />
-    <img class="heart-small7" src="/images/ring-heart.png" alt="" />
+    <!-- <img class="heart-small7" src="/images/ring-heart.png" alt="" /> -->
     <img class="heart-small8" src="/images/heart-small.png" alt="" />
 
-    <img class="heart-medium" src="/images/heart-medium.png" alt="" />
+    <!-- <img class="heart-medium" src="/images/heart-medium.png" alt="" /> -->
     <img class="heart-medium2" src="/images/heart-medium.png" alt="" />
-    <img class="heart-medium3" src="/images/blueshirt-medium.png" alt="" />
+    <!-- <img class="heart-medium3" src="/images/blueshirt-medium.png" alt="" /> -->
     <!-- <img class="heart-medium4" src="/images/heart-medium.png" alt="" /> -->
-    <img class="heart-medium5" src="/images/thanksgiving.png" alt="" />
+    <!-- <img class="heart-medium5" src="/images/thanksgiving.png" alt="" /> -->
     <img class="heart-medium6" src="/images/heart-medium.png" alt="" />
-    <img class="heart-medium7" src="/images/us.png" alt="" />
+    <!-- <img class="heart-medium7" src="/images/us.png" alt="" /> -->
 
 
-    <img class="heart-large" src="/images/beach2.png" alt=""/>
+    <!-- <img class="heart-large" src="/images/beach2.png" alt=""/> -->
     <!-- <img class="heart-large2" src="/images/heart-large.png" alt=""/> -->
-    <img class="heart-large3" src="/images/smile-large.png" alt=""/>
-    <img class="heart-large4" src="/images/heart-large.png" alt=""/>
+    <!-- <img class="heart-large3" src="/images/smile-large.png" alt=""/> -->
+    <!-- <img class="heart-large4" src="/images/heart-large.png" alt=""/> -->
 
-    <img class="heart-outline" src="/images/heart-outline.png" alt=""/>
-    <img class="heart-outline2" src="/images/heart-outline.png" alt=""/>
+    <!-- <img class="heart-outline" src="/images/heart-outline.png" alt=""/>
+    <img class="heart-outline2" src="/images/heart-outline.png" alt=""/> -->
     <img class="heart-outline3" src="/images/heart-outline.png" alt=""/>
     <img class="heart-outline4" src="/images/heart-outline.png" alt=""/>
 
@@ -78,143 +131,10 @@
 <!-- floating hearts -->
 
 
-
-<!-- <script src="/js/app.js" charset="utf-8"></script> -->
-
-<script>
-// dots is an array of Dot objects,
-// mouse is an object used to track the X and Y position
-   // of the mouse, set with a mousemove event listener below
-var dots = [],
-    mouse = {
-      x: 0,
-      y: 0
-    };
-// The Dot object used to scaffold the dots
-var Dot = function() {
-  this.x = 0;
-  this.y = 0;
-  this.node = (function(){
-    var n = document.createElement("div");
-    n.className = "trail";
-    document.body.appendChild(n);
-    return n;
-  }());
-};
-// The Dot.prototype.draw() method sets the position of
-  // the object's <div> node
-Dot.prototype.draw = function() {
-  this.node.style.left = this.x + "px";
-  this.node.style.top = this.y + "px";
-};
-// Creates the Dot objects, populates the dots array
-for (var i = 0; i < 12; i++) {
-  var d = new Dot();
-  dots.push(d);
-}
-// This is the screen redraw function
-function draw() {
-  // Make sure the mouse position is set everytime
-    // draw() is called.
-  var x = mouse.x,
-      y = mouse.y;
-  // This loop is where all the 90s magic happens
-  dots.forEach(function(dot, index, dots) {
-    var nextDot = dots[index + 1] || dots[0];
-    dot.x = x+1;
-    dot.y = y-1;
-    dot.draw();
-    x += (nextDot.x - dot.x) * .6;
-    y += (nextDot.y - dot.y) * .6;
-  });
-}
-addEventListener("mousemove", function(event) {
-  //event.preventDefault();
-  mouse.x = event.pageX;
-  mouse.y = event.pageY;
-});
-// animate() calls draw() then recursively calls itself
-  // everytime the screen repaints via requestAnimationFrame().
-function animate() {
-  draw();
-  requestAnimationFrame(animate);
-}
-// And get it started by calling animate().
-animate();
-</script>
-
-<script>
-// dots is an array of Dot objects,
-// mouse is an object used to track the X and Y position
-   // of the mouse, set with a mousemove event listener below
-var dots = [],
-    mouse = {
-      x: 0,
-      y: 0
-    };
-
-// The Dot object used to scaffold the dots
-var Dot = function() {
-  this.x = 0;
-  this.y = 0;
-  this.node = (function(){
-    var n = document.createElement("div");
-    n.className = "trail";
-    document.body.appendChild(n);
-    return n;
-  }());
-};
-// The Dot.prototype.draw() method sets the position of
-  // the object's <div> node
-Dot.prototype.draw = function() {
-  this.node.style.left = this.x + "px";
-  this.node.style.top = this.y + "px";
-};
-
-// Creates the Dot objects, populates the dots array
-for (var i = 0; i < 12; i++) {
-  var d = new Dot();
-  dots.push(d);
-}
-
-// This is the screen redraw function
-function draw() {
-  // Make sure the mouse position is set everytime
-    // draw() is called.
-  var x = mouse.x,
-      y = mouse.y;
-
-  // This loop is where all the 90s magic happens
-  dots.forEach(function(dot, index, dots) {
-    var nextDot = dots[index + 1] || dots[0];
-
-    dot.x = x+1;
-    dot.y = y-1;
-    dot.draw();
-    x += (nextDot.x - dot.x) * .6;
-    y += (nextDot.y - dot.y) * .6;
-
-  });
-}
-
-addEventListener("mousemove", function(event) {
-  //event.preventDefault();
-  mouse.x = event.pageX;
-  mouse.y = event.pageY;
-});
-
-// animate() calls draw() then recursively calls itself
-  // everytime the screen repaints via requestAnimationFrame().
-function animate() {
-  draw();
-  requestAnimationFrame(animate);
-}
-
-// And get it started by calling animate().
-animate();
+  </div>
+<script src="/js/app.js" charset="utf-8"></script>
 
 
-</script>
 
   </body>
 </html>
