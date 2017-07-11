@@ -115,7 +115,7 @@ $uploadButton.addEventListener('click', function() {
 			fctx2.beginPath();
 			fctx2.moveTo(x, y);
 			fctx2.lineTo(endX, endY);
-			fctx2.lineWidth = 3;
+			fctx2.lineWidth = 500;
 			fctx2.lineCap = 'round';
 			fctx2.strokeStyle = gradient;
 			fctx2.stroke();
@@ -127,7 +127,7 @@ $uploadButton.addEventListener('click', function() {
 			var gradient = [];
 
 			gradient[0] = bctx.createRadialGradient(wWidth*0.3, wHeight*0.1, 0, wWidth*0.3, wHeight*0.1, wWidth*0.9);
-			gradient[0].addColorStop(0, 'rgb(0, 26, 77)');
+			gradient[0].addColorStop(0, 'rgb(120, 26, 77)');
 			gradient[0].addColorStop(1, 'transparent');
 
 			bctx.translate(wWidth, 0);
@@ -147,7 +147,7 @@ $uploadButton.addEventListener('click', function() {
 			bctx.fillRect(0, 0, wWidth, wHeight);
 
 			gradient[2] = bctx.createRadialGradient(wWidth*0.1, wHeight*0.5, 0, wWidth*0.1, wHeight*0.5, wWidth*0.5);
-			gradient[2].addColorStop(0, 'rgb(40, 20, 105)');
+			gradient[2].addColorStop(0, 'rgb(140, 120, 105)');
 			gradient[2].addColorStop(1, 'transparent');
 
 			bctx.beginPath();
