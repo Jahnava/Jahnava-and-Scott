@@ -35,7 +35,8 @@ html, body, .page {
   left: 200%;
 }
 
-#p1 { background-image: url('/images/flowerpiano3.jpg');background-image: no-repeat center center fixed;
+#p1 { background-image: url('/images/flowerpiano3.jpg');
+background-image: no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -226,6 +227,19 @@ a {
   width:100%;
   background-image: url('/images/stars.gif');
 }
+
+#stringLights{
+  background-image: url('/images/lights.png');
+  background-image: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 500px;
+  height:10px;
+  width:100%;
+}
+
 
 .scrollTitle{
   background-image: url('/images/piano-text.jpg');
