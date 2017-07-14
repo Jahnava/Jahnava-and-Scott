@@ -222,6 +222,16 @@ a {
 
 /*p1*/
 
+.metStory{
+  text-shadow: 1px 1px 20px rgba(0, 16, 101, 1);
+}
+
+.storyTitle{
+  text-decoration:underline;
+  text-shadow: 1px 1px 20px rgba(0, 16, 101, 1);
+  font-weight: bold;
+}
+
 #stars{
   height: 20px;
   width:100%;
@@ -243,6 +253,7 @@ a {
 
 .scrollTitle{
   background-image: url('/images/piano-text.jpg');
+text-shadow: 0px 0px 14px rgba(0, 16, 37, 1);
 }
 
 /*scroll box wedding*/
@@ -573,7 +584,7 @@ img:hover{
  /*margin-top: 1%;*/
   font-weight: bold;
    font-weight: bold;
-   
+
 }
 
 /*.uploadButton {
