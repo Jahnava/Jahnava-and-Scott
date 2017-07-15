@@ -228,7 +228,7 @@ html, body {
 }
 
 
-.heart-medium {
+/*.heart-medium {
   -webkit-animation:heart-medium 4s linear infinite;
   animation:heart-medium 4s linear infinite;
   position: absolute;
@@ -481,7 +481,7 @@ html, body {
   10%  { top:-15%; opacity: 0; }
   11%  { top:100%; opacity: 0; }
   100% { top:20%; }
-}
+}*/
 
 
 /*Mouse Trail Tidbit*/
